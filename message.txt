@@ -1,0 +1,87 @@
+#include <iostream>
+#include <string.h>
+#include <string>
+
+using namespace std;
+
+struct student{
+  //The student structure
+  char name[50];
+  char major[50];
+  int age;
+  double gpa;
+    
+};
+
+void displayData(student);
+
+int main(){
+  //Variables
+  char make_student;
+  int number_of_students = 0; 
+  char exit; 
+  
+  //Aks if you want to make a student. 
+  std::cout << "Menu\n\n";
+  std::cout << "If you want to make a student press y  \nif you want to quit press q\nif you want see the number of student press n: ";
+  std::cin >> make_student;
+  
+  //If press q it goes back to Menu
+  while (make_student == 'q'){
+
+    std::cout << "If you want to make a student press 1 else press q: ";
+    std::cin >> make_student;
+  }
+  
+  //Asks for student details
+  if (make_student == 'y'){
+    
+    student student1;
+    number_of_students++;
+
+    //Asks for name of student
+    std::cout << "\nWhat is the name of the student: ";
+    std::cin >> student1.name;
+     
+    //Asks what major the student is taking
+    std::cout << "\nWhat major is " << student1.name << " taking?: ";
+    std::cin >> student1.major;
+     
+    //Asks the age of the students
+    std::cout << "\nHow old is " << student1.name << " ?: ";
+    std::cin >> student1.age;
+     
+    //Aks for the gpa of the student
+    std::cout << "\nWhat gpa does " << student1.name << " have?: ";
+    std::cin >> student1.gpa;
+     
+    
+    displayData(student1);
+  
+  }
+
+  //If press n, then it shows how much students are added (Not working) 
+  if (make_student == 'n'){
+
+    std::cout << "How much students added: " << number_of_students;
+
+  }
+
+  return 0;
+}
+
+//Prints out the student details
+void displayData(student student1){
+  std::cout << "\n Student #1\n";
+
+  std::cout << "\nName: " << student1.name << "\n";
+
+  std::cout << "\nMajor: " << student1.major << "\n";
+
+  std::cout << "\nAge: " << student1.age << "\n";
+
+  std::cout << "\nGpa: " << student1.gpa << "\n\n";
+  
+  main();
+  
+}
