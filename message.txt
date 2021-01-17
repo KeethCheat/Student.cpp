@@ -29,7 +29,7 @@ int main(){
   //If press q it goes back to Menu
   while (make_student == 'q'){
 
-    std::cout << "If you want to make a student press 1 else press q: ";
+    std::cout << "If you want to make a student press y  \nif you want to quit press q\nif you want see the number of student press n: ";
     std::cin >> make_student;
   }
   
